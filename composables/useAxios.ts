@@ -13,7 +13,11 @@ export default function useAxios() {
     return instance
       .get(url, params)
       .then((res) => {
-        return res.data.items;
+        if (res.data.items) {
+          return res.data.items;
+        } else {
+          return res.data;
+        }
       })
       .catch((err) => {
         // console.log(err);
