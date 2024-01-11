@@ -5,8 +5,6 @@ useHead({
 </script>
 <template>
   <div>首页</div>
-  <div>
-    <WatchHistoryPart />
-  </div>
+  <div></div>
 </template>
 <style scoped></style>
