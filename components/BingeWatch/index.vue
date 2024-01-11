@@ -30,17 +30,9 @@ function hideHiddenCards() {
       <h3 class="title">专属推荐</h3>
       <span class="show-hidden-cards">
         <!-- 添加向左的图标 -->
-        <i @click="hideHiddenCards()">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-left"></use>
-          </svg>
-        </i>
+        <i @click="hideHiddenCards()" class="iconfont icon-left"></i>
         {{ curCardsIndex }} / {{ allCardsIndex }}
-        <i @click="showHiddenCards()">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-Right"></use>
-          </svg>
-        </i>
+        <i @click="showHiddenCards()" class="iconfont icon-Right"></i>
       </span>
     </div>
     <div class="video-show-card-wrapper" ref="videoShowCardWrapperElemRef">

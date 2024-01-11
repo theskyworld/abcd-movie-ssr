@@ -19,14 +19,14 @@
       right: 50px;
       top: 1px;
 
-      .icon {
-        width: 0.7em;
-        height: 0.7em;
+      .iconfont {
+        font-size: 0.7em;
         transform: translate(1px, -1px);
         cursor: pointer;
+        color: #fff;
 
         &:hover {
-          fill: var(--color-hover);
+          color: var(--color-hover);
         }
       }
     }
@@ -36,7 +36,7 @@
     height: max-content;
     display: flex;
     flex-direction: row;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
 
     div {
       margin-right: 30px;
