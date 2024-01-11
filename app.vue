@@ -3,6 +3,36 @@ import { storeToRefs } from "pinia";
 // @ts-ignore
 import useMainStore from "~/store";
 const { isShow, content, type } = storeToRefs(useMainStore());
+
+// 用于监听swiper的上下滚动
+const homePageSwiperContainerRef = ref();
+// 用于监听首页容器元素内容的上下滚动
+const fromHomePageRef = ref();
+const navBarWrapperRef = ref();
+
+// 根据swiper的是否滚动至视口之外来决定是否为navbar添加背景颜色
+function intersectionObserverSwiper() {
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    fromHomePageRef.value.onscroll = () => {
+      // 如果swiper元素被滑动到了视口之外
+      if (entries[0].intersectionRatio === 0) {
+        // 将navbar的背景颜色进行添加
+        navBarWrapperRef.value.style.backgroundColor = "#1A1C1F";
+      }
+      // 如果swiper元素被滑动重新进入了视口
+      if (entries[0].intersectionRatio > 0) {
+        // 将navbar的背景颜色去除
+        navBarWrapperRef.value.style.backgroundColor = "";
+      }
+    };
+  });
+
+  intersectionObserver.observe(homePageSwiperContainerRef.value);
+}
+
+onMounted(() => {
+  intersectionObserverSwiper();
+});
 </script>
 
 <template>
