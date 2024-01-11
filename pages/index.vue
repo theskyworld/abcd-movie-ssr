@@ -10,11 +10,14 @@ const isLoading = ref(true);
 const swiperDatas: any = ref({});
 const bingeWatchDatas: any = ref({});
 const hotPlayingDatas: any = ref({});
+const bingeWeeklyDatas: any = ref({});
 onBeforeMount(async () => {
   const datas = await get("/home");
   swiperDatas.value = datas[0];
   bingeWatchDatas.value = datas[1];
   hotPlayingDatas.value = datas[2];
+  bingeWeeklyDatas.value = datas[3];
+
   isLoading.value = false;
 });
 </script>
@@ -43,6 +46,13 @@ onBeforeMount(async () => {
             :imgURLs="hotPlayingDatas.imgURLs"
             :video-tags="hotPlayingDatas.videoTags"
             :video-scores="hotPlayingDatas.videoScores"
+          />
+          <BingeWeekly
+            :video-titles="bingeWeeklyDatas.videoTitles"
+            :imgURLs="bingeWeeklyDatas.imgURLs"
+            :video-tags="bingeWeeklyDatas.videoTags"
+            :video-episodes="bingeWeeklyDatas.videoEpisodes"
+            :video-scores="bingeWeeklyDatas.videoScores"
           />
         </div>
       </Teleport>
