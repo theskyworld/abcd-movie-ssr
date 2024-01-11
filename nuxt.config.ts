@@ -5,5 +5,16 @@ export default defineNuxtConfig({
   devServer: {
     port: 3010,
   },
+  vite: {
+    server: {
+      proxy: {
+        "/api": {
+          target: "http://localhost:3000",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, "api"),
+        },
+      },
+    },
+  },
   css: ["~/assets/styles/index.scss"],
 });
