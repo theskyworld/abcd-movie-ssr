@@ -4,9 +4,6 @@ useHead({
 });
 </script>
 <template>
-  <div>首页</div>
-  <div>
-    <ProfileCard />
-  </div>
+  <div class="home-page-container"></div>
 </template>
 <style scoped></style>
