@@ -1,0 +1,18 @@
+// 由于内容被传送到了指定的容器下，其父元素发生了改变
+.home-page-swiper-container {
+  .home-page-swiper-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+.video-shows-container {
+  .video-shows-wrapper {
+    width: 100%;
+    height: 100%;
+    div:not(:first-child) {
+      margin-top: 50px;
+    }
+  }
+}
+
+

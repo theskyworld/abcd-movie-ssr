@@ -9,10 +9,12 @@ const { get } = useAxios();
 const isLoading = ref(true);
 const swiperDatas: any = ref({});
 const bingeWatchDatas: any = ref({});
+const hotPlayingDatas: any = ref({});
 onBeforeMount(async () => {
   const datas = await get("/home");
   swiperDatas.value = datas[0];
   bingeWatchDatas.value = datas[1];
+  hotPlayingDatas.value = datas[2];
   isLoading.value = false;
 });
 </script>
@@ -36,9 +38,17 @@ onBeforeMount(async () => {
             :video-tags="bingeWatchDatas.videoTags"
             :video-scores="bingeWatchDatas.videoScores"
           />
+          <HotPlaying
+            :video-titles="hotPlayingDatas.videoTitles"
+            :imgURLs="hotPlayingDatas.imgURLs"
+            :video-tags="hotPlayingDatas.videoTags"
+            :video-scores="hotPlayingDatas.videoScores"
+          />
         </div>
       </Teleport>
     </div>
   </LoadingWrapper>
 </template>
-<style scoped></style>
+<style scoped lang="scss">
+@use "./index.scss";
+</style>
