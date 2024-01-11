@@ -32,6 +32,8 @@
   "dependencies": {
     "axios": "^1.6.5",
     "nuxt-storage": "^1.2.2",
-    "pinia": "^2.1.7"
+    "nuxt-swiper": "^1.2.2",
+    "pinia": "^2.1.7",
+    "swiper": "^11.0.5"
   }
 }
