@@ -20,11 +20,18 @@ export default function useAxios() {
       });
   };
 
-  const post = () => {};
+  const post = (
+    url: string,
+    data?: Record<string, any>,
+    config?: Record<string, any>,
+  ) => {
+    return instance.post(url, data, config);
+  };
 
   const put = () => {};
 
   return {
     get,
+    post,
   };
 }

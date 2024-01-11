@@ -5,6 +5,8 @@ useHead({
 </script>
 <template>
   <div>首页</div>
-  <div></div>
+  <div>
+    <ProfileCard />
+  </div>
 </template>
 <style scoped></style>
