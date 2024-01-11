@@ -11,12 +11,15 @@ const swiperDatas: any = ref({});
 const bingeWatchDatas: any = ref({});
 const hotPlayingDatas: any = ref({});
 const bingeWeeklyDatas: any = ref({});
+const bestMoviesInWeekDatas: any = ref({});
+
 onBeforeMount(async () => {
   const datas = await get("/home");
   swiperDatas.value = datas[0];
   bingeWatchDatas.value = datas[1];
   hotPlayingDatas.value = datas[2];
   bingeWeeklyDatas.value = datas[3];
+  bestMoviesInWeekDatas.value = datas[5];
 
   isLoading.value = false;
 });
@@ -53,6 +56,12 @@ onBeforeMount(async () => {
             :video-tags="bingeWeeklyDatas.videoTags"
             :video-episodes="bingeWeeklyDatas.videoEpisodes"
             :video-scores="bingeWeeklyDatas.videoScores"
+          />
+          <BestMoviesInWeek
+            :video-titles="bestMoviesInWeekDatas.videoTitles"
+            :imgURLs="bestMoviesInWeekDatas.imgURLs"
+            :video-tags="bestMoviesInWeekDatas.videoTags"
+            :video-scores="bestMoviesInWeekDatas.videoScores"
           />
         </div>
       </Teleport>
