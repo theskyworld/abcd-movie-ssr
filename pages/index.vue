@@ -13,7 +13,13 @@ const hotPlayingDatas: any = ref({});
 const bingeWeeklyDatas: any = ref({});
 const bestMoviesInWeekDatas: any = ref({});
 const bestMoviesInMonthDatas: any = ref({});
-
+const netflixHotDatas: any = ref({});
+const hotJanpaneseAndKoreanDatas: any = ref({});
+const hotEuropeanAndAmericanDatas: any = ref({});
+const hotHongKongAndTaiwanDatas: any = ref({});
+const hotTVSeriesDatas: any = ref({});
+const hotAnimeDatas: any = ref({});
+const hotVarietyDatas: any = ref({});
 onBeforeMount(async () => {
   const datas = await get("/home");
   swiperDatas.value = datas[0];
@@ -22,7 +28,13 @@ onBeforeMount(async () => {
   bingeWeeklyDatas.value = datas[3];
   bestMoviesInMonthDatas.value = datas[4];
   bestMoviesInWeekDatas.value = datas[5];
-
+  netflixHotDatas.value = datas[6];
+  hotJanpaneseAndKoreanDatas.value = datas[7];
+  hotEuropeanAndAmericanDatas.value = datas[8];
+  hotHongKongAndTaiwanDatas.value = datas[9];
+  hotTVSeriesDatas.value = datas[10];
+  hotAnimeDatas.value = datas[11];
+  hotVarietyDatas.value = datas[12];
   isLoading.value = false;
 });
 </script>
@@ -70,6 +82,48 @@ onBeforeMount(async () => {
             :imgURLs="bestMoviesInMonthDatas.imgURLs"
             :video-tags="bestMoviesInMonthDatas.videoTags"
             :video-scores="bestMoviesInMonthDatas.videoScores"
+          />
+          <NetflixHot
+            :video-titles="netflixHotDatas.videoTitles"
+            :imgURLs="netflixHotDatas.imgURLs"
+            :video-episodes="netflixHotDatas.videoEpisodes"
+            :video-scores="netflixHotDatas.videoScores"
+          />
+          <HotJanpaneseAndKorean
+            :video-titles="hotJanpaneseAndKoreanDatas.videoTitles"
+            :imgURLs="hotJanpaneseAndKoreanDatas.imgURLs"
+            :video-episodes="hotJanpaneseAndKoreanDatas.videoEpisodes"
+            :video-scores="hotJanpaneseAndKoreanDatas.videoScores"
+          />
+          <HotEuropeanAndAmerican
+            :video-titles="hotEuropeanAndAmericanDatas.videoTitles"
+            :imgURLs="hotEuropeanAndAmericanDatas.imgURLs"
+            :video-episodes="hotEuropeanAndAmericanDatas.videoEpisodes"
+            :video-scores="hotEuropeanAndAmericanDatas.videoScores"
+          />
+          <HotHongKongAndTaiwan
+            :video-titles="hotHongKongAndTaiwanDatas.videoTitles"
+            :imgURLs="hotHongKongAndTaiwanDatas.imgURLs"
+            :video-episodes="hotHongKongAndTaiwanDatas.videoEpisodes"
+            :video-scores="hotHongKongAndTaiwanDatas.videoScores"
+          />
+          <HotTVSeries
+            :video-titles="hotTVSeriesDatas.videoTitles"
+            :imgURLs="hotTVSeriesDatas.imgURLs"
+            :video-episodes="hotTVSeriesDatas.videoEpisodes"
+            :video-scores="hotTVSeriesDatas.videoScores"
+          />
+          <HotAnime
+            :video-titles="hotAnimeDatas.videoTitles"
+            :imgURLs="hotAnimeDatas.imgURLs"
+            :video-episodes="hotAnimeDatas.videoEpisodes"
+            :video-scores="hotAnimeDatas.videoScores"
+          />
+          <HotVariety
+            :video-titles="hotVarietyDatas.videoTitles"
+            :imgURLs="hotVarietyDatas.imgURLs"
+            :video-episodes="hotVarietyDatas.videoEpisodes"
+            :video-scores="hotVarietyDatas.videoScores"
           />
         </div>
       </Teleport>
