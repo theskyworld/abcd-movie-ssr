@@ -2,7 +2,7 @@
 <template>
   <div>首页</div>
   <div>
-    <SearchAdvise />
+    <Search />
   </div>
 </template>
 <style scoped></style>
