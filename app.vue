@@ -9,6 +9,13 @@ const { isShow, content, type } = storeToRefs(useMainStore());
   <div class="app-container">
     <BaseNotification v-if="isShow" :content="content" :type="type" />
     <div class="static-parts-wrapper">
+      <div class="from-home-page" ref="fromHomePageRef">
+        <div
+          class="home-page-swiper-container"
+          ref="homePageSwiperContainerRef"
+        ></div>
+        <div class="video-shows-container"></div>
+      </div>
       <div class="nav-bar-wrapper" ref="navBarWrapperRef">
         <NavBar />
       </div>
