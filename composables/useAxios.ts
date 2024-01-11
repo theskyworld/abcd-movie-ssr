@@ -5,6 +5,7 @@ const instance = axios.create({
 });
 
 export default function useAxios() {
+  // TODO增加isRequesting的逻辑
   const get = (
     url: string,
     params?: Record<string, string | number | boolean>,
@@ -12,10 +13,10 @@ export default function useAxios() {
     return instance
       .get(url, params)
       .then((res) => {
-        return res.data;
+        return res.data.items;
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   };
 
