@@ -1,12 +1,5 @@
-<script>
-useHead({
-  script: [
-    {
-      src: import("~/assets/fonts/icon-font.js"),
-    },
-  ],
-});
-</script>
+<script setup lang="ts"></script>
+
 <template>
   <div class="app-container">
     <div class="dynamic-parts-wrapper">

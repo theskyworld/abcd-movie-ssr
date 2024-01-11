@@ -28,11 +28,7 @@ const searchAdvisers = computed(() => {
           :key="id"
           :class="{ hot: isHot }"
         >
-          <i>
-            <svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-hot"></use>
-            </svg>
-          </i>
+          <i class="iconfont icon-hot"></i>
           <span>{{ content }}</span>
         </li>
       </ul>
