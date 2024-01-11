@@ -12,6 +12,7 @@ const bingeWatchDatas: any = ref({});
 const hotPlayingDatas: any = ref({});
 const bingeWeeklyDatas: any = ref({});
 const bestMoviesInWeekDatas: any = ref({});
+const bestMoviesInMonthDatas: any = ref({});
 
 onBeforeMount(async () => {
   const datas = await get("/home");
@@ -19,6 +20,7 @@ onBeforeMount(async () => {
   bingeWatchDatas.value = datas[1];
   hotPlayingDatas.value = datas[2];
   bingeWeeklyDatas.value = datas[3];
+  bestMoviesInMonthDatas.value = datas[4];
   bestMoviesInWeekDatas.value = datas[5];
 
   isLoading.value = false;
@@ -62,6 +64,12 @@ onBeforeMount(async () => {
             :imgURLs="bestMoviesInWeekDatas.imgURLs"
             :video-tags="bestMoviesInWeekDatas.videoTags"
             :video-scores="bestMoviesInWeekDatas.videoScores"
+          />
+          <BestMoviesInMonth
+            :video-titles="bestMoviesInMonthDatas.videoTitles"
+            :imgURLs="bestMoviesInMonthDatas.imgURLs"
+            :video-tags="bestMoviesInMonthDatas.videoTags"
+            :video-scores="bestMoviesInMonthDatas.videoScores"
           />
         </div>
       </Teleport>
