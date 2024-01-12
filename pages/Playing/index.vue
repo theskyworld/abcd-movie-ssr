@@ -119,7 +119,7 @@ onBeforeMount(async () => {
             :key="index"
             >{{ episodeNames && episodeNames[index] }}
             <!-- 当前集数正在播放的动画 -->
-            <PlayingAnimation
+            <BasePlayingAnimation
               class="playing-animation"
               v-if="curEpisodeIndex === index + 1"
             />
