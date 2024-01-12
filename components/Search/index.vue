@@ -22,12 +22,9 @@ const kw = ref("");
 async function toSearchResPage() {
   // 更新keyword
   mainStore.setKeyword(kw.value);
-  // router.push({
-  //   name: "search",
-  //   params: {
-  //     kw: kw.value,
-  //   },
-  // });
+  router.push({
+    path: `/search/${kw.value}`,
+  });
   // 请求数据
   await mainStore.getSearchResData(false);
   kw.value = "";
