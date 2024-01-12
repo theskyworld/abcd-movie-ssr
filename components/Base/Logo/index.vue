@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="logo-container">
+  <div class="logo-container" @click="$router.push('/')">
     <h1>
       <img src="~/assets/imgs/ABCD影视.svg" alt="ABCD影视" />
     </h1>
