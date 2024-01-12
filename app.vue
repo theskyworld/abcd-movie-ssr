@@ -2,7 +2,7 @@
 import { storeToRefs } from "pinia";
 // @ts-ignore
 import useMainStore from "~/store";
-const { isShow, content, type } = storeToRefs(useMainStore());
+const { isShow, content, type, isInLogin } = storeToRefs(useMainStore());
 
 // 用于监听swiper的上下滚动
 const homePageSwiperContainerRef = ref();
@@ -51,6 +51,9 @@ onMounted(() => {
       </div>
       <div class="side-menus-wrapper">
         <BaseSideMenus />
+      </div>
+      <div class="login-card-wraper" v-if="isInLogin">
+        <BaseLoginCard />
       </div>
     </div>
     <div class="dynamic-parts-wrapper">
