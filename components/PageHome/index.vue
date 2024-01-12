@@ -88,6 +88,7 @@ onBeforeMount(async () => {
 });
 </script>
 <template>
+  <!-- TODO为什么无法像客户端渲染一样在数据获取之前进行LoadingSkeleton的正常渲染 -->
   <div class="page-home-container">
     <div class="home-wrapper" v-loading:[loadingComName]="isLoading">
       <BaseVideoShowCard
