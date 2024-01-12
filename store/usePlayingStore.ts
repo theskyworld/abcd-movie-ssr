@@ -28,7 +28,7 @@ const usePlayingStore = defineStore("playingStore", {
     ) {
       if (this.playingKeyword) {
         const res = await get(
-          `/api/search?keyword=${this.playingKeyword}&isByClick=${isByClick}&routeIndex=${routeIndex}&perPageNum=${perPageNum}&page=${page}&episodeIndex=${episodeIndex}`,
+          `/search?keyword=${this.playingKeyword}&isByClick=${isByClick}&routeIndex=${routeIndex}&perPageNum=${perPageNum}&page=${page}&episodeIndex=${episodeIndex}`,
         );
 
         this.videoURL = res.videoURL;
