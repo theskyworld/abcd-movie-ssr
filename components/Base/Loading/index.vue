@@ -1,3 +1,8 @@
+<script setup lang="ts">
+defineOptions({
+  name: "Loading",
+});
+</script>
 <template>
   <div class="loading-container">
     <svg

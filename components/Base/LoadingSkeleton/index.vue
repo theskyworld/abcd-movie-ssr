@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineOptions({
+  name: "LoadingSkeleton",
+});
 import { ref } from "vue";
 
 // 决定要渲染的skeleton卡片的数量
