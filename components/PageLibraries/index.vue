@@ -24,9 +24,7 @@ function changeKws(newKws: Array<any>) {
 
 watchEffect(async () => {
   // 获取总的数据
-  datas.value = await get(
-    `/movie/movie-libraries?page=${page.value}&kws=${kws.value}`,
-  );
+  datas.value = await get(`${url}?page=${page.value}&kws=${kws.value}`);
 
   if (isLoading.value) {
     isLoading.value = false;
