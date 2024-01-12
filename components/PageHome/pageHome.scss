@@ -1,0 +1,91 @@
+// TODO 将来将其抽离出去
+// 修改滚动条样式
+@mixin scroll() {
+  // 整个滚动条容器样式
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  // 滚动条轨道样式
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  // 滚动条滑块样式
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+    background-color: #555;
+  }
+}
+.page-home-container {
+  width: 1228px;
+  // 更改高度，设置底部的margin，避免底部过于靠近视口底部
+  height: 530px;
+  margin {
+    bottom : 30px;
+  }
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include scroll;
+  div {
+    margin-bottom: 30px;
+  }
+
+  .rank-wrapper {
+    .title-wrapper {
+      position: relative;
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.3em;
+      }
+      .ranks-select-wrapper {
+        font-size: 0.7em;
+        position: absolute;
+        right: 100px;
+        top: 3px;
+        border-radius: 5px;
+
+        span {
+          display: inline-block;
+          color: var(--color-main);
+          margin: 0 10px;
+          padding: 5px;
+          &.curRank {
+            background-color: #070708;
+            color: var(--color-hover);
+            border-radius: 5px;
+          }
+          &:hover {
+            color: var(--color-hover);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .home-wrapper,
+  .video-show-card-wrapper {
+    width: 100%;
+    margin-top: 30px;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    div {
+      margin-bottom: 20px;
+    }
+  }
+  .home-wrapper {
+    margin-top: 0px;
+  }
+}
