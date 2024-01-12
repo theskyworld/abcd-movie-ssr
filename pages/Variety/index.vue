@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+// @ts-ignore
 import type { VideoSelectorData } from "~/components/Base/VideoSelectors/types";
 const activedTitle = ref("综艺首页");
 
