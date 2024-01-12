@@ -39,11 +39,7 @@ async function toSearchResPage() {
       placeholder="搜索电影、电视剧、综艺、动漫"
       v-model.lazy="kw"
     />
-    <i @click="toSearchResPage">
-      <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-search"></use>
-      </svg>
-    </i>
+    <i @click="toSearchResPage" class="iconfont icon-search"></i>
     <SearchAdvise v-if="isInputElemFocus" />
   </div>
 </template>

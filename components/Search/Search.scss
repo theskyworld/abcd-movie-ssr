@@ -23,15 +23,19 @@
     }
   }
 
-  .icon {
+  .iconfont {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    color : #fff;
+    font-size: 1.4em;
 
     &:hover {
       color: var(--color-hover);
+      font-size: 1.5em;
+      transition: font-size .5s ease-in-out;
     }
   }
 }
